@@ -1,2 +1,62 @@
+/*
+## Colors
+
+### Primary
+ --color-primary: #080808;//black
+
+ ###Secondary
+--color-secondary: #888888;//gray
+
+### Tertiary
+--color-tertiary: #ffffff;//white
+
+### Neutral
+--color-neutral: #efefef;//light gray.Runs through entire doc
+
+*/
+:root {
+  --color-primary: #080808;
+  --color-secondary: #888888;
+  --color-neutral: #efefef;
+  --color-tertiary: #ffffff; }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 40.625%; }
+  @media only screen and (min-width: 18.75em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 75em) {
+    html {
+      font-size: 62.5%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--color-neutral);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+body {
+  font-family: 'Mulish', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5; }
+
+.form__container {
+  display: grid;
+  place-items: center; }
+
 .header {
-  color: orangered; }
+  display: grid;
+  place-items: center; }
