@@ -4,11 +4,67 @@
 }
 
 .form__heading {
-  &--main {
+  &-main {
+    margin-bottom: 1.3rem;
+    text-align: center;
   }
-  &--sub {
+
+  &-sub {
+    margin-bottom: 5.2rem;
+    text-align: center;
   }
 }
 
 .form {
+  // max-width: 4.8rem;
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  grid-template-rows:
+    repeat(4, minmax(4.8rem, min-content)) minmax(6.7rem, min-content)
+    repeat(2, minmax(4.8rem, min-content));
+  grid-template-columns: repeat(4, minmax(7rem, min-content));
+
+  @include respond(phone-lg) {
+    grid-template-columns: repeat(4, minmax(10rem, min-content));
+  }
+  @include respond(tab-port) {
+    grid-template-columns: repeat(4, minmax(19rem, min-content));
+  }
+
+  grid-row-gap: 3.4rem;
+  grid-column-gap: 2rem;
+
+  &__label-name {
+    // grid-row: 1 /2;
+    // grid-column: 1/2;
+  }
+
+  &__input-name {
+    grid-row: 1 /2;
+    grid-column: 2/-1;
+  }
+
+  &__input-email {
+    // grid-row: 2/3;
+    grid-column: 2/-1;
+  }
+
+  &__input-organisation {
+    // grid-row: 3/4;
+    grid-column: 2/-1;
+  }
+
+  &__input-radio {
+    // grid-row: 4/5;
+    grid-column: 2/-1;
+  }
+
+  &__input-text {
+    grid-column: 2/-1;
+  }
+
+  &__submit {
+    grid-column: 1/-1;
+  }
 }

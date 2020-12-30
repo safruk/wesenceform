@@ -9,22 +9,98 @@
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header class="header">
+      <button class="button-close header__button-close">&#10006;</button>
       <div class="form__container">
-        <h1 class="form__heading--main">Build with us!</h1>
-        <h2 class="form__heading--sub">
+        <h1 class="form__heading-main">Build with us</h1>
+        <h2 class="form__heading-sub">
           Help us with a few details to reach out to you.
         </h2>
         <form class="form">
-          <label class="form__label"for=""> Your name </label>
-          <input type="text"> enter your name</input>
-           Your email enter your email Organisation
-          name enter the organisation’s name Stage of Organisation Idea Growth
-          Enterprise Project Brief tell us something about the project Any
-          project document Attach File Send
+          <label class="form__label form__label-name" for="nameField">
+            Your name
+          </label>
+          <input
+            class="form__input form__input-name"
+            type="text"
+            placeholder="enter your name"
+          />
+          <label class="form__label form__label-email" for="emailField">
+            Your email
+          </label>
+          <input
+            class="form__input form__input-email"
+            type="text"
+            placeholder="enter your email"
+          />
+
+          <label
+            class="form__label form__label-organisation"
+            for="organizationField"
+          >
+            Organisation <br />
+            name
+          </label>
+          <input
+            class="form__input form__input-organisation"
+            type="text"
+            placeholder="enter your organisation's name"
+          />
+
+          <label for="radioField" class="form__label form__label-stages"
+            >Stages Of<br />
+            the organisation</label
+          >
+
+          <div class="form__input-radio">
+            <input
+              class="form__input-radio1"
+              type="radio"
+              id="form__radio1"
+              name="stage"
+              value="idea"
+            />
+            <label for="stageChoice1">Idea</label>
+            <input
+              class="form__input-radio2"
+              type="radio"
+              id="form__radio2"
+              name="stage"
+              value="growth"
+            />
+            <label for="stageChoice2">Growth</label>
+            <input
+              class="form__input-radio3"
+              type="radio"
+              id="form__radio3"
+              name="stage"
+              value="enterprise"
+            />
+            <label for="stageChoice3">Enterprise</label>
+          </div>
+          <label for="messageField" class="form__label"> Project Brief</label>
+          <input
+            type="text"
+            placeholder="tell us something about the project"
+            name="projectmessage"
+            id="messageField"
+            class="form__input-text"
+          />
+
+          <label for="filepathField" class="form__label form__label-project">
+            Any project <br />document
+          </label>
+          <input
+            class="form__input-project"
+            placeholder="Attach File"
+            type="file"
+            name="file"
+            id="filepathField"
+          />
+          <input class="form__submit button-send" type="submit" value="send" />
         </form>
       </div>
     </header>

@@ -41,7 +41,7 @@ html {
 
 body {
   box-sizing: border-box;
-  width: 100%;
+  min-height: 100vh;
   background: var(--color-neutral);
   display: flex;
   justify-content: center;
@@ -51,12 +51,79 @@ body {
   font-family: 'Mulish', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1.5; }
+  line-height: 1.19; }
+
+.form__heading-main {
+  font-size: 3.2rem;
+  font-weight: 800; }
+
+.form__heading-sub {
+  font-size: 2.5rem;
+  font-weight: 800; }
 
 .form__container {
   display: grid;
   place-items: center; }
 
+.form__heading-main {
+  margin-bottom: 1.3rem;
+  text-align: center; }
+
+.form__heading-sub {
+  margin-bottom: 5.2rem;
+  text-align: center; }
+
+.form {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+  grid-template-rows: repeat(4, minmax(4.8rem, min-content)) minmax(6.7rem, min-content) repeat(2, minmax(4.8rem, min-content));
+  grid-template-columns: repeat(4, minmax(7rem, min-content));
+  grid-row-gap: 3.4rem;
+  grid-column-gap: 2rem; }
+  @media only screen and (min-width: 23.5em) {
+    .form {
+      grid-template-columns: repeat(4, minmax(10rem, min-content)); } }
+  @media only screen and (min-width: 37.5em) {
+    .form {
+      grid-template-columns: repeat(4, minmax(19rem, min-content)); } }
+  .form__input-name {
+    grid-row: 1 /2;
+    grid-column: 2/-1; }
+  .form__input-email {
+    grid-column: 2/-1; }
+  .form__input-organisation {
+    grid-column: 2/-1; }
+  .form__input-radio {
+    grid-column: 2/-1; }
+  .form__input-text {
+    grid-column: 2/-1; }
+  .form__submit {
+    grid-column: 1/-1; }
+
 .header {
   display: grid;
-  place-items: center; }
+  place-items: center;
+  margin: 0 3rem; }
+  .header__button-close {
+    justify-self: end; }
+
+.button-close {
+  width: 1.28rem;
+  height: 1.28rem;
+  border: none;
+  outline: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  backface-visibility: none; }
+  .button-close:active {
+    transform: translateY(2px); }
+
+.button-send {
+  border: 0;
+  text-align: center;
+  color: var(--color-tertiary);
+  border-radius: 0.5rem;
+  background-color: var(color-primary);
+  background-image: linear-gradient(to top left, var(--color-primary), var(--color-primary)); }
