@@ -10,36 +10,70 @@
   }
 
   &-sub {
-    margin-bottom: 5.2rem;
     text-align: center;
   }
 }
 
 .form {
+  margin: 5.2rem 0;
   // max-width: 4.8rem;
   display: grid;
-  justify-content: center;
-  align-content: start;
-  grid-template-rows:
-    repeat(4, minmax(4.8rem, min-content)) minmax(6.7rem, min-content)
-    repeat(2, minmax(4.8rem, min-content));
-  grid-template-columns: repeat(4, minmax(7rem, min-content));
+  justify-content: stretch;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
 
-  @include respond(phone-lg) {
-    grid-template-columns: repeat(4, minmax(10rem, min-content));
-  }
-  @include respond(tab-port) {
-    grid-template-columns: repeat(4, minmax(19rem, min-content));
-  }
+  grid-template-rows:
+    repeat(3, minmax(4.8rem, min-content)) 4.8rem minmax(6.7rem, min-content)
+    minmax(4rem, min-content) minmax(4.8rem, min-content); //Note to self.Better if you name the grid tracks.Feels like the grid could be scalable if thats done
+  grid-template-columns: repeat(4, minmax(4.8rem, min-content));
 
   grid-row-gap: 3.4rem;
   grid-column-gap: 2rem;
 
+  &__label {
+    align-self: center;
+  }
+
+  &__input {
+    border: 1px solid var(--color-secondary);
+    opacity: 0.5; //would have been better if colors were explicitly used.Makes code less readable because opacity here used only to achieve the gray color look.Fix this
+    border-radius: 0.5rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    // &:focus:invalid {
+    //   border: orangered;
+    // }
+  }
+  &__input::-webkit-input-placeholder {
+    padding-left: 1rem;
+    font-size: 1.1rem;
+  }
   &__label-name {
     // grid-row: 1 /2;
     // grid-column: 1/2;
   }
+  &__label-project {
+    display: flex;
+  }
+  &__label-radio {
+    // background:orangered;//for testing
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-secondary);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    //add the layout styling for icon here
+  }
 
+  &__label-file {
+    opacity: 0.5;
+  }
   &__input-name {
     grid-row: 1 /2;
     grid-column: 2/-1;
@@ -58,6 +92,33 @@
   &__input-radio {
     // grid-row: 4/5;
     grid-column: 2/-1;
+    display: flex;
+    justify-content: space-between;
+
+    & > :not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  // better option than[type="radio"] fix in the next update
+  &__input-radioButton {
+    // display: none;
+    // // opacity: 0;
+    // visibility: hidden;
+  }
+
+  &__input-radioButton:checked + &__label-radio {
+    opacity: 0.5;
+  }
+  &__input-project {
+    grid-column: 2/3;
+    border: none;
+    transform: translateY(-1rem); //just a hack//fix it later
+    // visibility: hidden;
+  }
+  &__input-projectFile {
+    opacity: 0;
+    transform: translateY(-0.5rem);
   }
 
   &__input-text {
@@ -66,5 +127,41 @@
 
   &__submit {
     grid-column: 1/-1;
+    opacity: 1;
   }
 }
+
+//hide the radio input element
+[type='radio'] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// [type='radio'] {
+//   outline: none;
+// }
+//
+//[type='file'] {
+// border: 0;
+// clip: rect(0 0 0 0);
+// height: 1px; margin: -1px;
+// overflow: hidden;
+// padding: 0;
+// position: absolute;
+// width: 1px;
+// }
+
+//THE CHECKBOX HACK
+/* the basic, unchecked style */
+
+// /* the checked style using the :checked pseudo class */
+
+// [type='radio']:checked ~ .form__label-radio {
+//   opacity: 0.5;
+// }

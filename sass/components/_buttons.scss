@@ -1,0 +1,36 @@
+.button-close {
+  width: 1.28rem;
+  height: 1.28rem;
+  border: none;
+  outline: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  backface-visibility: none;
+
+  // &:hover {
+  //   transform: translateY(-1px);
+  // }
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.button-send {
+  border: 0;
+  text-align: center;
+  color: var(--color-tertiary);
+  border-radius: 0.5rem;
+  background-color: var(color-primary);
+  background-image: linear-gradient(
+    to top left,
+    var(--color-primary),
+    var(--color-primary)
+  );
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:active {
+    transform: translateY(2px);
+  }
+}

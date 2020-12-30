@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -19,12 +19,13 @@
         <h2 class="form__heading-sub">
           Help us with a few details to reach out to you.
         </h2>
-        <form class="form">
+        <form action="#" class="form">
           <label class="form__label form__label-name" for="nameField">
             Your name
           </label>
           <input
-            class="form__input form__input-name"
+            required
+            class="form__input form__input form__input-name"
             type="text"
             placeholder="enter your name"
           />
@@ -32,7 +33,8 @@
             Your email
           </label>
           <input
-            class="form__input form__input-email"
+            required
+            class="form__input form__input form__input-email"
             type="text"
             placeholder="enter your email"
           />
@@ -45,62 +47,85 @@
             name
           </label>
           <input
-            class="form__input form__input-organisation"
+            required
+            class="form__input form__input form__input-organisation"
             type="text"
             placeholder="enter your organisation's name"
           />
 
           <label for="radioField" class="form__label form__label-stages"
             >Stages Of<br />
-            the organisation</label
+            Organisation</label
           >
-
+          <!--Fix this: Icons not added in radio buttons and attach file fields .
+            emojis used instead.remember to add them in next commit-->
+          <!--Emptty spans here to add appropriate icons in the future-->
           <div class="form__input-radio">
             <input
-              class="form__input-radio1"
+              required
+              class="form__input form__input-radioButton"
               type="radio"
-              id="form__radio1"
+              id="stageChoice1"
               name="stage"
               value="idea"
             />
-            <label for="stageChoice1">Idea</label>
+            <label class="form__label-radio" for="stageChoice1">
+              <span class="form__icon"> </span>💡&nbsp;Idea</label
+            >
             <input
-              class="form__input-radio2"
+              required
+              class="form__input form__input-radioButton"
               type="radio"
-              id="form__radio2"
+              id="stageChoice2"
               name="stage"
               value="growth"
             />
-            <label for="stageChoice2">Growth</label>
+            <label class="form__label-radio" for="stageChoice2">
+              <span class="form__icon"></span>📈&nbsp;Growth</label
+            >
             <input
-              class="form__input-radio3"
+              required
+              class="form__input form__input-radioButton"
               type="radio"
-              id="form__radio3"
+              id="stageChoice3"
               name="stage"
               value="enterprise"
             />
-            <label for="stageChoice3">Enterprise</label>
+            <label class="form__label-radio" for="stageChoice3">
+              <span class="form__icon"></span>🏢&nbsp;Enterprise</label
+            >
           </div>
           <label for="messageField" class="form__label"> Project Brief</label>
           <input
+            required
+            class="form__input form__input-text"
             type="text"
             placeholder="tell us something about the project"
             name="projectmessage"
             id="messageField"
-            class="form__input-text"
           />
 
-          <label for="filepathField" class="form__label form__label-project">
+          <label class="form__label form__label-project">
             Any project <br />document
           </label>
+          <div class="form__input-project">
+            <input
+              required
+              class="form__input form__input-projectFile"
+              type="file"
+              name="file"
+              id="filepathField"
+            />
+            <label class="form__label-file" for="filepathField"
+              >📎 &nbsp; Attach file</label
+            >
+          </div>
           <input
-            class="form__input-project"
-            placeholder="Attach File"
-            type="file"
-            name="file"
-            id="filepathField"
+            required
+            class="form__input form__submit button-send"
+            type="submit"
+            value="Send"
           />
-          <input class="form__submit button-send" type="submit" value="send" />
         </form>
       </div>
     </header>
